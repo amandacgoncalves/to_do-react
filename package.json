@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "src/loader.js",
   "scripts": {
     "dev": "nodemon",
@@ -19,5 +18,14 @@
   },
   "devDependencies": {
     "nodemon": "1.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amandacgoncalves/to_do-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/amandacgoncalves/to_do-react/issues"
+  },
+  "homepage": "https://github.com/amandacgoncalves/to_do-react#readme",
+  "description": ""
 }
