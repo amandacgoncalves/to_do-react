@@ -1,15 +1,16 @@
 import React from "react";
-import {connect} from 'react-redux'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import Grid from "../template/grid";
 import IconButton from "../template/IconButton";
+import { changeDescription } from "./todoactions";
 
 const TodoForm = (props) => {
-
   const keyHandler = (e) => {
-    if (e.key === 'Enter') {
-        e.shiftKey ? props.handleSearch() : props.handleAdd()
+    if (e.key === "Enter") {
+      e.shiftKey ? props.handleSearch() : props.handleAdd();
     }
-  }
+  };
 
   return (
     <div role="form" className="todoForm">
@@ -18,7 +19,7 @@ const TodoForm = (props) => {
           id="description"
           className="form-control"
           placeholder="Adcione uma tarefa"
-          onChange={props.handleChange}
+          onChange={props.changeDescription}
           value={props.description}
         ></input>
       </Grid>
@@ -41,8 +42,9 @@ const TodoForm = (props) => {
       </Grid>
     </div>
   );
-}
+};
 
-const mapStateToProps = state => ({description: state.todo.description})
-
-export default connect(mapStateToProps)(TodoForm)
+const mapStateToProps = (state) => ({ description: state.todo.description });
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ changeDescription }, dispatch);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm);
