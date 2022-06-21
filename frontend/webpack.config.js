@@ -26,7 +26,7 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           presets: ["es2015", "react"],
-          plugins: ["transform-object-reset-spread"],
+          plugins: ["transform-object-rest-spread"],
         },
       },
       {
@@ -34,7 +34,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract("style-loader", "css-loader"),
       },
       {
-        test: /\.woff|.woff2|.ttf|.eot|.svg*.*/,
+        test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
         loader: "file",
       },
     ],
